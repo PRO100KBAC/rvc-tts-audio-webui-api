@@ -1,4 +1,4 @@
-# Retrieval-Voice-Conversion TTS & Audio WebUI
+# Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
 
 # Install guide for Windows
 
