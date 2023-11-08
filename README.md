@@ -18,7 +18,7 @@ This is a text-to-speech [rvc](https://github.com/RVC-Project/Retrieval-based-Vo
 
 >Has a wide range of settings
 
-![tts](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/d092102b-eeac-4c7e-bade-1e4cf7a4bbed)
+![tts](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/3e4dbffe-a7aa-4dfb-91dd-9f77cde607a1)
 
 ## AUDIO-RVC
 
@@ -26,13 +26,13 @@ This is a audio [rvc](https://github.com/RVC-Project/Retrieval-based-Voice-Conve
 
 >The settings are the same as in TTS, but audio file specific settings have been added.
 
-![audio](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/0d80d1b7-e08d-42b6-98c6-a8deadae783d)
+![audio](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/3c93be52-44f5-4ae6-bc97-b28a5612c351)
 
 ## Examples
 
-[tts voice result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/67986bd4-7550-43be-bff1-0f7b548c1b94)
+[tts_voice.webm](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/858c4b77-1486-415d-92ba-28016db3ea50)
 
-[combined audio result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/f488e212-b029-449e-bfe8-f6f7d64eb953)
+[combined.webm](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/1e2bed14-6e14-45ba-a864-a57a45612623)
 
 ## Locate RVC models
 
