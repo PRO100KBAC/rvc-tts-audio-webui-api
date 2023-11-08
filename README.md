@@ -1,6 +1,14 @@
 # Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
 
+Using this project, you can generate text to speech using any RVC model (including using your own trained ones). 
 
+Re-voice a speech or re-sing a song by separating the voice and instrumental with a splitter 2stems. 
+
+Changing the length and the indentation at the beginning( to skip silence or intro). 
+
+Also included bunch of settings. 
+
+>They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
 
 ## TTS-RVC
 
