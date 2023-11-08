@@ -1,6 +1,6 @@
 # Retrieval-Voice-Conversion EdgeTTS & Audio WebUI+API
 
-Using this project, you can generate text to speech using any RVC model (including using your own trained ones). 
+With this project, you can generate text to speech using any RVC model (including using your own trained ones). 
 
 Re-voice a speech or re-sing a song by separating the voice and instrumental with a splitter 2stems. 
 
