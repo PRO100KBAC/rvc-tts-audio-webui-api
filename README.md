@@ -2,9 +2,11 @@
 
 ## Examples
 
-[combined.webm](combined.webm)
+[combined audio result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/f488e212-b029-449e-bfe8-f6f7d64eb953)
 
-[tts_voice.webm](tts_voice.webm)
+
+[tts voice result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/67986bd4-7550-43be-bff1-0f7b548c1b94)
+
 
 ## Locate RVC models
 
