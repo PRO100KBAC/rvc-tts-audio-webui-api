@@ -1,5 +1,32 @@
 # Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
 
+
+
+## Locate RVC models
+
+You can place your RVC models in `weights/` directory as follows:
+
+```bash
+weights
+├── mymodel
+│   ├── mymodel.pth
+│   └── mymodel.index
+└── testmodel
+    ├── testmodel.pth
+    └── testmodel.index
+...
+```
+
+Each model directory should contain exactly one `.pth` file and at most one `.index` file. Directory names are used as model names.
+
+Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymodel.pth`), so please avoid them.
+
+# Requirements
+
+>Use Python 3.10.
+
+>NVIDIA or AMD ROCM or CPU(so slow)
+
 # Install guide for Windows
 
 **№1 Just open the fix.bat file**
@@ -27,3 +54,9 @@
 # Install guide for Linux
 
 >Coming soon
+
+# Launch
+
+>Windows - run.bat
+
+>~~Linux - run.sh~~
