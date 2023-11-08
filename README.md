@@ -2,9 +2,9 @@
 
 ## Examples
 
-[combined.webm](combined.webm)
+[combined.webm](combined.mov)
 
-[tts_voice.webm](tts_voice.webm)
+[tts_voice.webm](tts_voice.mov)
 
 ## Locate RVC models
 
