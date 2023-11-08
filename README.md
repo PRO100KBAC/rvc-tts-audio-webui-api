@@ -2,6 +2,22 @@
 
 
 
+## TTS-RVC
+
+>This is a text-to-speech [rvc](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) models, using [edge-tts](https://github.com/rany2/edge-tts).
+
+>Has a wide range of settings
+
+![tts](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/d092102b-eeac-4c7e-bade-1e4cf7a4bbed)
+
+## AUDIO-RVC
+
+>This is a audio [rvc](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) models, using [spleeter](https://github.com/deezer/spleeter), [ffmpeg](https://www.gyan.dev/ffmpeg/builds/) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+>The settings are the same as in TTS, but audio file specific settings have been added.
+
+![audio](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/0d80d1b7-e08d-42b6-98c6-a8deadae783d)
+
 ## Examples
 
 [tts voice result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/67986bd4-7550-43be-bff1-0f7b548c1b94)
