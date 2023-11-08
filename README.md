@@ -23,7 +23,7 @@ Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymod
 
 # Requirements
 
->Use Python 3.10.
+>Python 3.10
 
 >NVIDIA or AMD ROCM or CPU(so slow)
 
