@@ -1,4 +1,4 @@
-# Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
+# Retrieval-Voice-Conversion EdgeTTS & Audio WebUI+API
 
 Using this project, you can generate text to speech using any RVC model (including using your own trained ones). 
 
@@ -6,7 +6,9 @@ Re-voice a speech or re-sing a song by separating the voice and instrumental wit
 
 Changing the length and the indentation at the beginning( to skip silence or intro). 
 
-Also included bunch of settings. 
+Also included bunch of settings.
+
+There is a built-in API, now you can use requests like a `rvctts` or `rvcaudio` to generate text to speech or sing songs!
 
 >They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
 
