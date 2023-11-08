@@ -4,3 +4,4 @@ start app.py
 timeout /t 30 /nobreak
 call venvapi\scripts\activate
 start api.py
+EXIT /B
