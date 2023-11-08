@@ -1,6 +1,10 @@
 # Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
 
+## Examples
 
+[combined.mp3](combined.mp3)
+
+[vc_output.mp3](vc_output.mp3)
 
 ## Locate RVC models
 
@@ -21,13 +25,13 @@ Each model directory should contain exactly one `.pth` file and at most one `.in
 
 Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymodel.pth`), so please avoid them.
 
-# Requirements
+## Requirements
 
 >Python 3.10
 
 >NVIDIA or AMD ROCM or CPU(so slow)
 
-# Install guide for Windows
+## Install guide for Windows
 
 **№1 Just open the fix.bat file**
 
@@ -51,11 +55,11 @@ Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymod
 
 >after installation is complete, it starts automatically
 
-# Install guide for Linux
+## Install guide for Linux
 
 >Coming soon
 
-# Launch
+## Launch
 
 >Windows - run.bat
 
