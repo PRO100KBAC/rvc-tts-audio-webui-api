@@ -53,6 +53,12 @@ Each model directory should contain exactly one `.pth` file and at most one `.in
 
 Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymodel.pth`), so please avoid them.
 
+## Using built-in API
+
+For using built-in API you can send POST requests `rvctts` or `rvcaudio` to 127.0.0.1:7850 with parameters and headers like this example
+
+![Screenshot 2023-11-08 075510](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/62677ea5-1389-4555-8c99-0d852f24790b)
+
 ## Requirements
 
 >Python 3.10
