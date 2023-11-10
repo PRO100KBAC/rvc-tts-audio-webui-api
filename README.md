@@ -116,7 +116,7 @@ POST requests
 
 **№5 Open the install.bat file**
 
-When during installation you will need to select Nvidia GPU or CPU(so slow)
+When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU(so slow)
 
 >after installation is complete, it starts automatically
 
@@ -140,7 +140,7 @@ When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 **№4 Open the install.sh file**
 
-When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so slow)
+When during installation you will need to select Nvidia GPU cu118 & cu121, AMD ROCM or CPU(so slow)
 
 >after installation is complete, it starts automatically
 
