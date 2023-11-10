@@ -70,6 +70,7 @@ POST requests
 │   ├── edgetts_model - EdgeTTS model name from EdgeTTS
 │   ├── edgetts_speed - speed of speech
 │   ├── transpose - voice tone of RVC model
+│   ├── f0_method - f0 extract method for processing
 │   ├── indexrate - extract tone from model
 │   ├── protect - retention from model
 │   └── res - output audiofile(0 - EdgeTTS speech | 1 - result with rvc processing)
@@ -81,6 +82,7 @@ POST requests
     ├── url - youtube url video
     ├── slow - slow down playback
     ├── transpose - voice tone of RVC model
+    ├── f0_method - f0 extract method for processing
     ├── indexrate - extract tone from model
     ├── protect - retention from model
     ├── res - output audiofile(0 - original | 1 - original-voice | 2 - original-music | 3 - rvc-voice | 4 - result with rvc processing and music)
