@@ -398,7 +398,7 @@ if __name__ == '__main__':
                 step=0.1,
             ),
             gr.Radio(
-                ["pm", "harvest", "crepe", "rmvpe"],
+                ["pm", "harvest", "crepe-tiny", "crepe-full", "rmvpe"],
                 value="rmvpe",
                 label="Select f0 method (pm - faster, but low quality | rmvpe - best quality | harvest - slowest method)",
             ),
