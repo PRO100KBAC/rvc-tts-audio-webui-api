@@ -12,6 +12,8 @@ There is a built-in API, now you can use requests like a `rvctts` or `rvcaudio` 
 
 >My project is inspired by [rvc-tts-webui](https://github.com/litagin02/rvc-tts-webui)
 
+>Biggest thanks to [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)
+
 >They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
 
 ## TTS-RVC
@@ -122,7 +124,7 @@ Only if you haven't installed ffmpeg and doesn't added it to the system environm
 
 **№5 Open the install.bat file**
 
-When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU(so slow)
+When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 >after installation is complete, it starts automatically
 
@@ -146,7 +148,7 @@ When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU
 
 **№4 Open the install.sh file**
 
-When during installation you will need to select Nvidia GPU cu118 & cu121, AMD ROCM or CPU(so slow)
+When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so slow)
 
 >after installation is complete, it starts webui automatically
 
