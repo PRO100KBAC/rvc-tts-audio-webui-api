@@ -108,11 +108,13 @@ Only if you haven't installed vs_buildtools to build the project when installing
 
 >wait until process of installing redist vsbuildtools finished
 
-**№3 You need to manually install .pt files from huggingface and put to the root of the project:**
+**№3 You need to manually install .pt files from huggingface and put to the root of the project**
 
->[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
+[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
 
->[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
+[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
+
+>links lead to direct download
 
 **№4 Install ffmpeg and add to the system environment variable (Optional)**
 
@@ -136,11 +138,13 @@ When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 `git clone https://github.com/PRO100KBAC/rvc-tts-audio-webui-api.git`
 
-**№2 You need to manually install .pt files from huggingface and put to the root of the project:**
+**№2 You need to manually install .pt files from huggingface and put to the root of the project**
 
->[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
+[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
 
->[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
+[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
+
+>links lead to direct download
 
 **№3 Install ffmpeg**
 
