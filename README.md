@@ -55,29 +55,58 @@ Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymod
 
 ## Using built-in API
 
-For using built-in API you can send POST requests `rvctts` or `rvcaudio` to 127.0.0.1:7850 with parameters and headers like this example
-
-![Screenshot 2023-11-08 075510](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/62677ea5-1389-4555-8c99-0d852f24790b)
+For using built-in API you can send POST requests `rvctts` or `rvcaudio` to `127.0.0.1:7850` with some required parameters
+```bash
+POST requests
+├── /rvctts
+│   ├── text - text to generate speech
+│   ├── model - RVC model name from weights
+│   ├── volume - RVC output volume
+│   ├── gain - RVC output gain
+│   ├── edgetts_model - EdgeTTS model name from EdgeTTS
+│   ├── edgetts_speed - speed of speech
+│   ├── transpose - voice tone of RVC model
+│   ├── indexrate - extract tone from model
+│   ├── protect - retention from model
+│   └── res - output audiofile(0 - EdgeTTS speech | 1 - result with rvc processing)
+└── /rvcaudio
+    ├── model - RVC model name from weights
+    ├── volume - RVC output volume
+    ├── gain_vc - RVC output gain
+    ├── gain_mus - music gain
+    ├── url - youtube url video
+    ├── slow - slow down playback
+    ├── transpose - voice tone of RVC model
+    ├── indexrate - extract tone from model
+    ├── protect - retention from model
+    ├── res - output audiofile(0 - original | 1 - original-voice | 2 - original-music | 3 - rvc-voice | 4 - result with rvc processing and music)
+    ├── multi - start of track trim multiplier (x > then ss <)
+    └── duration - track length
+```
 
 ## Requirements
 
 >Python 3.10
 
->NVIDIA or AMD ROCM or CPU(so slow)
+>NVIDIA CUDA or AMD ROCM or CPU(so slow)
 
 ## Install guide for Windows
 
-**№1 Just open the fix.bat file**
+**№1 Clone or download project**
+
+`git clone https://github.com/PRO100KBAC/rvc-tts-audio-webui-api.git`
+
+**№2 Just open the fix.bat file**
 
 >wait until process of installing redist vsbuildtools finished
 
-**№2 You need to manually install .pt files from huggingface and put to the root of the project:**
+**№3 You need to manually install .pt files from huggingface and put to the root of the project:**
 
 >[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
 
 >[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
 
-**№3 Install ffmpeg and add to the system environment variable**
+**№4 Install ffmpeg and add to the system environment variable**
 
 >[ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z)
 
@@ -85,7 +114,9 @@ For using built-in API you can send POST requests `rvctts` or `rvcaudio` to 127.
 
 >System variables->Path->Edit->New->Put path to the ffmpeg folder
 
-**№4 Open the install.bat file**
+**№5 Open the install.bat file**
+
+When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 >after installation is complete, it starts automatically
 
