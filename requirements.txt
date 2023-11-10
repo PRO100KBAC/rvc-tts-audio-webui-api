@@ -12,5 +12,4 @@ soundfile==0.12.1
 gradio==3.38.0
 spleeter==2.4.0
 tensorflow==2.9.3
-torchcrepe==0.0.20
 yt-dlp==2023.10.7

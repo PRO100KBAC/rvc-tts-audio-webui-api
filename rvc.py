@@ -27,6 +27,7 @@ if __name__ == '__main__':
     separator = Separator('spleeter:2stems')
     limitation = os.getenv("SYSTEM") == "spaces"
     config = Config()
+    target_sample_rate = 48000
     edge_output_filename = "edge_output.mp3"
     tts_voice_list = asyncio.get_event_loop().run_until_complete(edge_tts.list_voices())
     tts_voices = [f"{v['ShortName']}-{v['Gender']}" for v in tts_voice_list]
@@ -49,7 +50,7 @@ def model_data(model_name):
     print(f"Loading {pth_path}")
     cpt = torch.load(pth_path, map_location="cpu")
     tgt_sr = cpt["config"][-1]
-    cpt["config"][-3] = cpt["weight"]["emb_g.weight"].shape[0]  # n_spk
+    cpt["config"][-3] = cpt["weight"]["emb_g.weight"].shape[0]
     if_f0 = cpt.get("f0", 1)
     version = cpt.get("version", "v1")
     if version == "v1":
@@ -127,7 +128,6 @@ def tts_process(
     audio_format,
     bitrate,
 ):
-    target_sample_rate = 48000
     voice_path = 'tts_voice.' + audio_format
     print(f"Model: {model_name}")
     print(f"Key: {f0_key}, Index: {index_rate}, Protect: {protect}")
@@ -234,7 +234,6 @@ def audio_file_process(
 ):
     global separator
     if __name__ == '__main__':
-        target_sample_rate = 48000
         temp_audio_file = 'temp_audio.'+audio_format
         voice_path = 'voice.'+audio_format
         music_path = 'music.'+audio_format
@@ -551,7 +550,7 @@ if __name__ == '__main__':
             ),
             gr.Slider(
                 label="Slow down playback (%)",
-                value=100,#100.12
+                value=100,
                 minimum=50,
                 maximum=150,
                 step=0.1,

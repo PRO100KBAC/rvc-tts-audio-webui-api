@@ -347,7 +347,7 @@ class RMVPE:
         ).to(device)
         self.model = self.model.to(device)
         cents_mapping = 20 * np.arange(360) + 1997.3794084376191
-        self.cents_mapping = np.pad(cents_mapping, (4, 4))  # 368
+        self.cents_mapping = np.pad(cents_mapping, (4, 4))
 
     def mel2hidden(self, mel):
         with torch.no_grad():
@@ -362,33 +362,20 @@ class RMVPE:
         cents_pred = self.to_local_average_cents(hidden, thred=thred)
         f0 = 10 * (2 ** (cents_pred / 1200))
         f0[f0 == 10] = 0
-        # f0 = np.array([10 * (2 ** (cent_pred / 1200)) if cent_pred else 0 for cent_pred in cents_pred])
         return f0
 
     def infer_from_audio(self, audio, thred=0.03):
         audio = torch.from_numpy(audio).float().to(self.device).unsqueeze(0)
-        # torch.cuda.synchronize()
-        # t0=ttime()
         mel = self.mel_extractor(audio, center=True)
-        # torch.cuda.synchronize()
-        # t1=ttime()
         hidden = self.mel2hidden(mel)
-        # torch.cuda.synchronize()
-        # t2=ttime()
         hidden = hidden.squeeze(0).cpu().numpy()
         if self.is_half == True:
             hidden = hidden.astype("float32")
         f0 = self.decode(hidden, thred=thred)
-        # torch.cuda.synchronize()
-        # t3=ttime()
-        # print("hmvpe:%s\t%s\t%s\t%s"%(t1-t0,t2-t1,t3-t2,t3-t0))
         return f0
 
     def to_local_average_cents(self, salience, thred=0.05):
-        # t0 = ttime()
-        center = np.argmax(salience, axis=1)  # 帧长#index
-        salience = np.pad(salience, ((0, 0), (4, 4)))  # 帧长,368
-        # t1 = ttime()
+        center = np.argmax(salience, axis=1)
         center += 4
         todo_salience = []
         todo_cents_mapping = []
@@ -397,36 +384,11 @@ class RMVPE:
         for idx in range(salience.shape[0]):
             todo_salience.append(salience[:, starts[idx] : ends[idx]][idx])
             todo_cents_mapping.append(self.cents_mapping[starts[idx] : ends[idx]])
-        # t2 = ttime()
-        todo_salience = np.array(todo_salience)  # 帧长，9
-        todo_cents_mapping = np.array(todo_cents_mapping)  # 帧长，9
+        todo_salience = np.array(todo_salience)
+        todo_cents_mapping = np.array(todo_cents_mapping)
         product_sum = np.sum(todo_salience * todo_cents_mapping, 1)
-        weight_sum = np.sum(todo_salience, 1)  # 帧长
-        devided = product_sum / weight_sum  # 帧长
-        # t3 = ttime()
-        maxx = np.max(salience, axis=1)  # 帧长
+        weight_sum = np.sum(todo_salience, 1)
+        devided = product_sum / weight_sum
+        maxx = np.max(salience, axis=1)
         devided[maxx <= thred] = 0
-        # t4 = ttime()
-        # print("decode:%s\t%s\t%s\t%s" % (t1 - t0, t2 - t1, t3 - t2, t4 - t3))
         return devided
-
-
-# if __name__ == '__main__':
-#     audio, sampling_rate = sf.read("卢本伟语录~1.wav")
-#     if len(audio.shape) > 1:
-#         audio = librosa.to_mono(audio.transpose(1, 0))
-#     audio_bak = audio.copy()
-#     if sampling_rate != 16000:
-#         audio = librosa.resample(audio, orig_sr=sampling_rate, target_sr=16000)
-#     model_path = "/bili-coeus/jupyter/jupyterhub-liujing04/vits_ch/test-RMVPE/weights/rmvpe_llc_half.pt"
-#     thred = 0.03  # 0.01
-#     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-#     rmvpe = RMVPE(model_path,is_half=False, device=device)
-#     t0=ttime()
-#     f0 = rmvpe.infer_from_audio(audio, thred=thred)
-#     f0 = rmvpe.infer_from_audio(audio, thred=thred)
-#     f0 = rmvpe.infer_from_audio(audio, thred=thred)
-#     f0 = rmvpe.infer_from_audio(audio, thred=thred)
-#     f0 = rmvpe.infer_from_audio(audio, thred=thred)
-#     t1=ttime()
-#     print(f0.shape,t1-t0)

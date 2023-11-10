@@ -1,7 +1,7 @@
 import numpy as np, parselmouth, torch, sys, os
 from time import time as ttime
 import torch.nn.functional as F
-import pyworld,  faiss, librosa, torchcrepe
+import pyworld,  faiss, librosa
 from scipy import signal
 from functools import lru_cache
 
@@ -14,17 +14,8 @@ input_audio_path2wav = {}
 
 
 @lru_cache
-def cache_harvest_f0(input_audio_path, fs, f0max, f0min, frame_period):
-    audio = input_audio_path2wav[input_audio_path]
-    f0, t = pyworld.harvest(
-        audio,
-        fs=fs,
-        f0_ceil=f0max,
-        f0_floor=f0min,
-        frame_period=frame_period,
-    )
-    f0 = pyworld.stonemask(audio, f0, t, fs)
-    return f0
+def coming_soon_rmvpe_gpu():
+    return ""
 
 
 def change_rms(data1, sr1, data2, sr2, rate):
@@ -83,50 +74,7 @@ class VC(object):
         f0_max = 1100
         f0_mel_min = 1127 * np.log(1 + f0_min / 700)
         f0_mel_max = 1127 * np.log(1 + f0_max / 700)
-        if f0_method == "pm":
-            print("using pm method")
-            f0 = (
-                parselmouth.Sound(x, self.sr)
-                .to_pitch_ac(
-                    time_step=time_step / 1000,
-                    voicing_threshold=0.6,
-                    pitch_floor=f0_min,
-                    pitch_ceiling=f0_max,
-                )
-                .selected_array["frequency"]
-            )
-            pad_size = (p_len - len(f0) + 1) // 2
-            if pad_size > 0 or p_len - len(f0) - pad_size > 0:
-                f0 = np.pad(
-                    f0, [[pad_size, p_len - len(f0) - pad_size]], mode="constant"
-                )
-        elif f0_method == "harvest":
-            print("using harvest method")
-            input_audio_path2wav[input_audio_path] = x.astype(np.double)
-            f0 = cache_harvest_f0(input_audio_path, self.sr, f0_max, f0_min, 1)
-            if filter_radius > 0.1:
-                f0 = signal.medfilt(f0, 1)
-        elif f0_method == "crepe":
-            print("using crepe method")
-            model = "tiny"
-            batch_size = 128
-            audio = torch.tensor(np.copy(x))[None].float()
-            f0, pd = torchcrepe.predict(
-                audio,
-                self.sr,
-                self.window,
-                f0_min,
-                f0_max,
-                model,
-                batch_size=batch_size,
-                device=self.device,
-                return_periodicity=True,
-            )
-            pd = torchcrepe.filter.median(pd, 1)
-            f0 = torchcrepe.filter.mean(f0, 1)
-            f0[pd < 0.01] = 0
-            f0 = f0[0].cpu().numpy()
-        elif f0_method == "rmvpe":
+        if f0_method == "rmvpe":
             print("using rmvpe method")
             if hasattr(self, "model_rmvpe") == False:
                 from rmvpe import RMVPE
@@ -282,14 +230,11 @@ class VC(object):
     ):
         if (
             file_index != ""
-            # and file_big_npy != ""
-            # and os.path.exists(file_big_npy) == True
             and os.path.exists(file_index) == True
             and index_rate != 0
         ):
             try:
                 index = faiss.read_index(file_index)
-                # big_npy = np.load(file_big_npy)
                 big_npy = index.reconstruct_n(0, index.ntotal)
             except:
                 traceback.print_exc()

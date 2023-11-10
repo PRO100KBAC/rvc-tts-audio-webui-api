@@ -46,9 +46,6 @@ class Config:
             cmd_opts.noparallel,
             cmd_opts.noautoopen,
         )
-
-    # has_mps is only available in nightly pytorch (for now) and MasOS 12.3+.
-    # check `getattr` and try it for compatibility
     @staticmethod
     def has_mps() -> bool:
         if not torch.backends.mps.is_available():
@@ -82,7 +79,7 @@ class Config:
                 + 0.4
             )
         elif self.has_mps():
-            print("No supported Nvidia GPU found, use MPS instead")
+            print("No supported Nvidia or AMD GPU found, use MPS instead")
             self.device = "mps"
             self.is_half = False
         else:
