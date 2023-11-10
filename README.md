@@ -128,7 +128,7 @@ Only if you haven't installed ffmpeg and doesn't added it to the system environm
 
 When during installation you will need to select Nvidia GPU or CPU(so slow)
 
->after installation is complete, it starts automatically
+>after installation is complete, it starts webui automatically
 
 ## Install guide for Linux
 
@@ -162,7 +162,7 @@ When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so 
 
 `runAPI.bat` - start api only
 
->tested on Windows 10/11
+>tested on Windows 10/11 CPU mode
 
 ## Launch Linux
 
