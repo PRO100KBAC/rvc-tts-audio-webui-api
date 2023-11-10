@@ -177,3 +177,21 @@ When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so 
 `runAPI.sh` - start api only
 
 >tested on Ubuntu 22.04.2 LTS (Jammy Jellyfish)
+
+## Road map
+
+- ~~Add repository on github~~
+
+- ~~Add few f0 methods~~
+
+- ~~Optimize f0 methods~~
+
+- ~~Speed-up infer time on CPU~~
+
+- Add refresh button models list
+
+- Add rmvpe-gpu f0 method
+
+- Make processing even faster without or minimal deterioration in quality
+
+- Add DirectML support
