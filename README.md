@@ -96,7 +96,9 @@ POST requests
 
 `git clone https://github.com/PRO100KBAC/rvc-tts-audio-webui-api.git`
 
-**№2 Just open the fix.bat file**
+**№2 Just open the fix.bat file (Optional)**
+
+Only if you haven't installed vs_buildtools to build the project when installing packages
 
 >wait until process of installing redist vsbuildtools finished
 
@@ -106,7 +108,9 @@ POST requests
 
 >[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
 
-**№4 Install ffmpeg and add to the system environment variable**
+**№4 Install ffmpeg and add to the system environment variable (Optional)**
+
+Only if you haven't installed ffmpeg and doesn't added it to the system environment variable
 
 >[ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z)
 
