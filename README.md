@@ -88,7 +88,7 @@ POST requests
 
 >Python 3.10
 
->NVIDIA CUDA or AMD ROCM or CPU(so slow)
+>NVIDIA CUDA or AMD ROCM(linux only) or CPU(so slow)
 
 ## Install guide for Windows
 
@@ -122,10 +122,30 @@ When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 ## Install guide for Linux
 
->Coming soon
+**№1 Clone or download project**
+
+`git clone https://github.com/PRO100KBAC/rvc-tts-audio-webui-api.git`
+
+**№2 You need to manually install .pt files from huggingface and put to the root of the project:**
+
+>[rmvpe.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/rmvpe.pt?download=true)
+
+>[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
+
+**№3 Install ffmpeg**
+
+`sudo apt install ffmpeg`
+
+>check if ffmpeg is successfully installed by the command `ffmpeg -version`
+
+**№4 Open the install.sh file**
+
+When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so slow)
+
+>after installation is complete, it starts automatically
 
 ## Launch
 
 >Windows - run.bat
 
->~~Linux - run.sh~~
+>Linux - run.sh
