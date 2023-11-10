@@ -10,6 +10,10 @@ Also included bunch of settings.
 
 There is a built-in API, now you can use requests like a `rvctts` or `rvcaudio` to generate text to speech or sing songs!
 
+>My project is inspired by [rvc-tts-webui](https://github.com/litagin02/rvc-tts-webui)
+
+>Biggest thanks to [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)
+
 >They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
 
 ## TTS-RVC
@@ -96,7 +100,9 @@ POST requests
 
 `git clone https://github.com/PRO100KBAC/rvc-tts-audio-webui-api.git`
 
-**№2 Just open the fix.bat file**
+**№2 Just open the fix.bat file (Optional)**
+
+Only if you haven't installed vs_buildtools to build the project when installing packages
 
 >wait until process of installing redist vsbuildtools finished
 
@@ -106,7 +112,9 @@ POST requests
 
 >[hubert_base.pt](https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt?download=true)
 
-**№4 Install ffmpeg and add to the system environment variable**
+**№4 Install ffmpeg and add to the system environment variable (Optional)**
+
+Only if you haven't installed ffmpeg and doesn't added it to the system environment variable
 
 >[ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z)
 
@@ -116,7 +124,7 @@ POST requests
 
 **№5 Open the install.bat file**
 
-When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU(so slow)
+When during installation you will need to select Nvidia GPU or CPU(so slow)
 
 >after installation is complete, it starts automatically
 
@@ -140,12 +148,26 @@ When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU
 
 **№4 Open the install.sh file**
 
-When during installation you will need to select Nvidia GPU cu118 & cu121, AMD ROCM or CPU(so slow)
+When during installation you will need to select Nvidia GPU, AMD ROCM or CPU(so slow)
 
->after installation is complete, it starts automatically
+>after installation is complete, it starts webui automatically
 
-## Launch
+## Launch Windows
 
->Windows - run.bat
+`run.bat` - start webui only
 
->Linux - run.sh
+`runWithAPI.bat` - start webui with api
+
+`runAPI.bat` - start api only
+
+>tested on Windows 10/11
+
+## Launch Linux
+
+`run.sh` - start webui only
+
+`runWithAPI.sh` - start webui with api
+
+`runAPI.sh` - start api only
+
+>tested on Ubuntu 22.04.2 LTS (Jammy Jellyfish)
