@@ -10,6 +10,8 @@ Also included bunch of settings.
 
 There is a built-in API, now you can use requests like a `rvctts` or `rvcaudio` to generate text to speech or sing songs!
 
+>My project is inspired by [rvc-tts-webui](https://github.com/litagin02/rvc-tts-webui)
+
 >They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
 
 ## TTS-RVC
