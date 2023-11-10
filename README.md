@@ -1,12 +1,38 @@
-# Retrieval-Voice-Conversion EdgeTTS & Audio WebUI
+# Retrieval-Voice-Conversion EdgeTTS & Audio WebUI+API
 
+With this project, you can generate text to speech using any RVC model (including using your own trained ones). 
 
+Re-voice a speech or re-sing a song by separating the voice and instrumental with a splitter 2stems. 
+
+Changing the length and the indentation at the beginning( to skip silence or intro). 
+
+Also included bunch of settings.
+
+There is a built-in API, now you can use requests like a `rvctts` or `rvcaudio` to generate text to speech or sing songs!
+
+>They say that if you set all the settings perfectly, you will get a masterpiece, but this is not so easy to achieve...
+
+## TTS-RVC
+
+This is a text-to-speech [rvc](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) models, using [edge-tts](https://github.com/rany2/edge-tts).
+
+>Has a wide range of settings
+
+![tts](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/3e4dbffe-a7aa-4dfb-91dd-9f77cde607a1)
+
+## AUDIO-RVC
+
+This is a audio [rvc](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) models, using [spleeter](https://github.com/deezer/spleeter), [ffmpeg](https://www.gyan.dev/ffmpeg/builds/) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+>The settings are the same as in TTS, but audio file specific settings have been added.
+
+![audio](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/3c93be52-44f5-4ae6-bc97-b28a5612c351)
 
 ## Examples
 
-[tts voice result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/67986bd4-7550-43be-bff1-0f7b548c1b94)
+[tts_voice.webm](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/858c4b77-1486-415d-92ba-28016db3ea50)
 
-[combined audio result](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/f488e212-b029-449e-bfe8-f6f7d64eb953)
+[combined.webm](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/1e2bed14-6e14-45ba-a864-a57a45612623)
 
 ## Locate RVC models
 
@@ -26,6 +52,12 @@ weights
 Each model directory should contain exactly one `.pth` file and at most one `.index` file. Directory names are used as model names.
 
 Non-ASCII characters in path names gave faiss errors (like `weights/デル/mymodel.pth`), so please avoid them.
+
+## Using built-in API
+
+For using built-in API you can send POST requests `rvctts` or `rvcaudio` to 127.0.0.1:7850 with parameters and headers like this example
+
+![Screenshot 2023-11-08 075510](https://github.com/PRO100KBAC/rvc-tts-audio-webui-api/assets/98932626/62677ea5-1389-4555-8c99-0d852f24790b)
 
 ## Requirements
 
