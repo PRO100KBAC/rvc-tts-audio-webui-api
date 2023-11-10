@@ -142,10 +142,24 @@ When during installation you will need to select Nvidia GPU cu118 & cu121 or CPU
 
 When during installation you will need to select Nvidia GPU cu118 & cu121, AMD ROCM or CPU(so slow)
 
->after installation is complete, it starts automatically
+>after installation is complete, it starts webui automatically
 
-## Launch
+## Launch Windows
 
->Windows - run.bat
+`run.bat` - start webui only
 
->Linux - run.sh
+`runWithAPI.bat` - start webui with api
+
+`runAPI.bat` - start api only
+
+>tested on Windows 10/11
+
+## Launch Linux
+
+`run.sh` - start webui only
+
+`runWithAPI.sh` - start webui with api
+
+`runAPI.sh` - start api only
+
+>tested on Ubuntu 22.04.2 LTS (Jammy Jellyfish)
